@@ -1,0 +1,118 @@
+prompt,base,finetuned
+Viết một hàm Python để đảo ngược một chuỗi mà không dùng các hàm có sẵn.,"def reverse_string(string):
+    result = """"
+    for i in range(len(string)-1, -1, -1):
+        result += string[i]
+    return result
+
+if __name__ == '__main__':
+    string = ""Hello World!""
+    print(reverse_string(string)) # Output: ""!dlroW olleH""","def reverse_string(str):
+    result = """"
+    for i in range(len(str) - 1, -1, -1):
+        result += str[i]
+    return result
+
+# test
+print(reverse_string(""Hello World"")) # Output: ""dlroW olleH"""
+Làm cách nào để đọc một file CSV và in ra 5 dòng đầu tiên bằng thư viện pandas?,"import pandas as pd
+  
+# đọc file csv
+df = pd.read_csv('file.csv')
+ 
+# in ra 5 dòng đầu tiên
+for index, row in df.head(5).iterrows():
+    print(row) 
+    			
+# kết quả:
+# 0   1   2   3   4 
+# John  15  10  20  15 
+# Anna  20  10  25  20 
+# Jack  10  15  25  20 
+# Mike  15  20  30  25 
+#... ... ... .","import pandas as pd
+
+data = pd.read_csv('file.csv')
+
+for index, row in data.head(5).iterrows():
+ print(row) 
+  # Output:
+ # row1
+ # row2
+ # row3
+ # row4
+ # row5
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #... 
+  #"
+Sử dụng list comprehension để tạo danh sách các số chia hết cho 3 trong khoảng từ 1 đến 50.,"[3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48]","[3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48]"
+"Viết một class `SinhVien` trong Python gồm các thuộc tính tên, tuổi và một phương thức để in thông tin.","class SinhVien:
+    def __init__(self, ten, tuoi):
+        self.ten = ten
+        self.tuoi = tuoi
+
+    def in_thong_tin(self):
+        print(f'Tên: {self.ten}, Tuổi: {self.tuoi}') 
+
+# sử dụng
+s = SinhVien('Nguyen Van Be', 20)
+s.in_thong_tin() 
+# Output:
+# Ten: Nguyen Van Be, Tuoi: 20 
+# (not a comm","class SinhVien:
+    def __init__(self, ten, tuoi):
+        self.ten = ten
+        self.tuoi = tuoi
+
+    def in_thongtin(self):
+        print(""Tên: "" + self.ten)
+        print(""Tuổi: "" + str(self.tuoi)) 
+        print(""\n"") 
+
+sv1 = SinhVien(""Nguyen Van A"", 18)
+sv1.in_thongtin() 
+
+sv2 = SinhVien(""Nguy"
+Làm thế nào để bắt lỗi (Exception Handling) khi cố gắng mở một file không tồn tại?,"try:
+    file = open('file.txt', 'r')
+except FileNotFoundError:
+    print(""File not found!"") 
+else:
+    file.read() 
+    file.close() 
+    
+
+# hoặc 
+
+try:
+    file = open('file.txt', 'r')
+    file.read()
+except FileNotFoundError:
+    print(""File not found!"") 
+else:
+    file.close() 
+
+# hoặc 
+
+try:
+ ","try:
+    file = open(""example.txt"", ""r"")
+except FileNotFoundError:
+    print(""File not found."") 
+
+# This will print ""File not found."" when the file example.txt is not present."
